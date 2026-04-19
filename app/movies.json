@@ -1,0 +1,361 @@
+
+[
+    {
+        "title": "Captain Miller",
+        "image": "https://img.youtube.com/vi/bSkOF-mEbUU/maxresdefault.jpg",
+        "category": "action",
+        "language": "tamil",
+        "type": "movie",
+        "year": 2025,
+        "rating": 4.7,
+        "link": "https://www.youtube.com/embed/bSkOF-mEbUU",
+        "description": "Dhanush leads in 'Captain Miller', an action-packed film directed by Arun Matheswaran. The teaser promises high-octane sequences and intense drama."
+    },
+    
+    {
+        "title": "Shadow Force",
+        "image": "https://img.youtube.com/vi/M7LhGytiHFM/maxresdefault.jpg",
+        "category": "action",
+        "language": "english",
+        "type": "movie",
+        "year": 2025,
+        "rating": 4.4,
+        "link": "https://www.youtube.com/embed/M7LhGytiHFM",
+        "description": "A team of elite operatives is tasked with taking down a global criminal syndicate. As they delve deeper into the underworld, they uncover a conspiracy that threatens international security."
+    },
+    {
+        "title": "Paatal Lok Season 2",
+        "image": "https://img.youtube.com/vi/RyzVgy8JteA/maxresdefault.jpg",
+        "category": "web_series",
+        "language": "hindi",
+        "type":  "movie",
+        "year": 2025,
+        "rating": 4.5,
+        "link": "https://www.youtube.com/embed/RyzVgy8JteA",
+        "description": "The much-anticipated second season of the dark crime anthology. Following the moral and societal decay, a disillusioned cop delves into a conspiracy far darker than the crimes he investigates. Deeply atmospheric and biting in its critique, the show explores power, justice, and corruption in a fractured society, with haunting visuals and morally complex characters."
+    },
+    {
+        "title": "Criminal Justice: A Family Matter (Season 4)",
+        "image": "https://img.youtube.com/vi/98pKCUl4ljM/maxresdefault.jpg",
+        "category": "web_series",
+        "language": "hindi",
+        "type": "movie",
+        "year": 2025,
+        "rating": 4.4,
+        "link": "https://www.youtube.com/embed/98pKCUl4ljM",
+        "description": "This season returns to explore how personal and societal morals collide in the courtroom. When a case involving a powerful family and a nurse accused of murder unravels, the team grapples with media scrutiny, personal loss, and ethical dilemmas. Intense performances and sharp dialogue mark a strong return for this franchise."
+    },
+   
+    
+  {
+    "title": "Inception",
+    "image": "https://img.youtube.com/vi/bSkOF-mEbUU/maxresdefault.jpg",
+    "category": "action",
+    "language": "english",
+    "type": "movie",
+    "year": 2010,
+    "rating": 8.8,
+    "link": "https://www.youtube.com/embed/bSkOF-mEbUU",
+    "description": "A mind-bending thriller about dream infiltration."
+  },
+  {
+    "title": "Stranger Things",
+    "image": "https://img.youtube.com/vi/wXKO0ihKloc/maxresdefault.jpg",
+    "category": "web_series",
+    "language": "english",
+    "type": "series",
+    "year": 2016,
+    "rating": 8.7,
+    "link": "https://www.youtube.com/embed/wXKO0ihKloc",
+    "description": "Kids, monsters, and government conspiracies in the '80s."
+  },
+  {
+    "title": "Spirited Away",
+    "image": "https://img.youtube.com/vi/ByXuk9QqQkk/maxresdefault.jpg",
+    "category": "anime_Series",
+    "language": "japanese",
+    "type": "movie",
+    "year": 2001,
+    "rating": 8.6,
+    "link": "https://www.youtube.com/embed/ByXuk9QqQkk",
+    "description": "A magical journey into a spirit world."
+  },
+  
+    {
+        "title": "Mounam Pesiyadhe",
+        "image": "https://img.youtube.com/vi/HGpntW_p87w/maxresdefault.jpg",
+        "category": "romantic_drama",
+        "language": "tamil",
+        "type": "movie",
+        "year": 2002,
+        "rating": 4.4,
+        "link": "https://www.youtube.com/embed/HGpntW_p87w?si=3JvhwkLAa0sbZ-L_",
+        "description": "Mounam Pesiyadhe is a romantic drama that explores unspoken love and complex relationships. Suriya delivers a subtle and powerful performance as a man caught between friendship and unexpected love. Trisha plays his co-star, bringing charm and depth to the film’s narrative. Yuvan Shankar Raja’s soulful music enhances the emotional weight of the story, making it unforgettable."
+    },
+  {
+    "title": "The Kissing Booth",
+    "image": "https://img.youtube.com/vi/HGpntW_p87w/maxresdefault.jpg",
+    "category": "romantic_drama",
+    "language": "english",
+    "type": "movie",
+    "year": 2018,
+    "rating": 6.2,
+    "link": "https://www.youtube.com/embed/HGpntW_p87w?si=3JvhwkLAa0sbZ-L_",
+    "description": "High school romance with best friend's brother."
+  },
+    {
+        "title": "Sillunu Oru Kaadhal",
+        "image": "https://img.youtube.com/vi/Duv8y2dYqBA/hqdefault.jpg",
+        "category": "romantic_drama",
+        "language": "tamil",
+        "type": "movie",
+        "year": 2006,
+        "rating": 4.3,
+        "link": "https://www.youtube.com/embed/Duv8y2dYqBA",
+        "description": "Sillunu Oru Kaadhal is a poignant love story directed by Krishna, starring Suriya, Jyothika, and Bhumika. The film explores the struggles of married life when past relationships resurface unexpectedly. Suriya portrays a devoted husband caught between love, sacrifice, and duty. With A.R. Rahman’s magical music, the film continues to be celebrated for its emotional depth and realism."
+    },
+    {
+        "title": "Pithamagan",
+        "image": "https://img.youtube.com/vi/ukyH2ugSIZY/maxresdefault.jpg",
+        "category": "drama",
+        "language": "tamil",
+        "type": "movie",
+        "year": 2003,
+        "rating": 4.6,
+        "link": "https://www.youtube.com/embed/ukyH2ugSIZY",
+        "description": "Pithamagan, directed by Bala, is a powerful drama exploring human loneliness and unconventional friendships. While Vikram plays the lead, Suriya shines as Sakthi, a witty conman whose friendship brings color to an otherwise dark tale. The movie’s raw portrayal of emotions earned critical acclaim. Since no trailer is available, the soulful song 'Aruna Runam' captures the intensity of the narrative."
+    },
+    {
+        "title": "Singam",
+        "image": "https://img.youtube.com/vi/96CgGu1JYbY/hqdefault.jpg",
+        "category": "action",
+        "language": "tamil",
+        "type": "movie",
+        "year": 2010,
+        "rating": 4.5,
+        "link": "https://www.youtube.com/embed/96CgGu1JYbY",
+        "description": "'Singam' introduces Suriya as Durai Singam, a no-nonsense cop battling intense criminal networks. Directed by Hari, the trailer oozes high-voltage action and charisma.:contentReference[oaicite:0]{index=0}"
+    },
+    {
+        "title": "The Conjuring",
+        "image": "https://img.youtube.com/vi/k10ETZ41q5o/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2013,
+        "rating": 4.7,
+        "link": "https://www.youtube.com/embed/k10ETZ41q5o",
+        "description": "Based on real-life paranormal investigators Ed and Lorraine Warren, 'The Conjuring' follows the terrifying haunting of a farmhouse. \nThe film combines jump scares with deep psychological horror. \nIts trailer is chilling, filled with eerie visuals and an ominous tone. \nThis movie set the benchmark for modern horror storytelling."
+    },
+    {
+        "title": "Insidious",
+        "image": "https://img.youtube.com/vi/zuZnRUcoWos/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2010,
+        "rating": 4.5,
+        "link": "https://www.youtube.com/embed/zuZnRUcoWos",
+        "description": "A family moves into a new house only to discover their son is trapped in a terrifying astral plane called 'The Further'. \nThe film blends supernatural scares with emotional depth. \nIts trailer delivers eerie tension and sudden shocks. \nJames Wan creates a haunting atmosphere that lingers beyond the screen."
+    },
+
+
+    {
+        "title": "Hereditary",
+        "image": "https://img.youtube.com/vi/V6wWKNij_1M/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2018,
+        "rating": 4.7,
+        "link": "https://www.youtube.com/embed/V6wWKNij_1M",
+        "description": "A disturbing tale of a family unraveling after the death of their matriarch. \nThe film explores grief, cults, and chilling supernatural elements. \nIts trailer teases eerie visuals and intense psychological horror. \nAri Aster’s film redefined the modern horror landscape."
+    },
+
+    {
+        "title": "Train to Busan",
+        "image": "https://img.youtube.com/vi/pyWuHv2-Abk/hqdefault.jpg",
+        "category": "horror",
+        "language": "korean",
+        "type": "movie",
+        "year": 2016,
+        "rating": 4.8,
+        "link": "https://www.youtube.com/embed/pyWuHv2-Abk",
+        "description": "A gripping zombie apocalypse thriller set on a moving train. \nThe movie blends horror with themes of survival, family, and sacrifice. \nIts trailer is filled with tension, chaos, and heart-stopping moments. \nOne of the most successful Korean horror films globally."
+    },
+
+    {
+        "title": "It",
+        "image": "https://img.youtube.com/vi/xKJmEC5ieOk/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2017,
+        "rating": 4.7,
+        "link": "https://www.youtube.com/embed/xKJmEC5ieOk",
+        "description": "A terrifying adaptation of Stephen King's novel, featuring Pennywise the Clown. \nThe story revolves around children facing their deepest fears in Derry. \nThe trailer is filled with suspenseful sequences, chilling visuals, and jump scares. \nIt has become one of the most iconic modern horror films globally."
+    },
+
+    {
+        "title": "The Witch",
+        "image": "https://img.youtube.com/vi/iQXmlf3Sefg/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2015,
+        "rating": 4.6,
+        "link": "https://www.youtube.com/embed/iQXmlf3Sefg",
+        "description": "Set in 1630s New England, a family is torn apart by dark supernatural forces. \nThe film focuses on paranoia, religion, and witchcraft. \nThe trailer highlights eerie forests, sinister rituals, and creeping dread. \nThe Witch is lauded for its authentic period detail and psychological horror."
+    },
+
+    {
+        "title": "Get Out",
+        "image": "https://img.youtube.com/vi/DzfpyUB60YY/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2017,
+        "rating": 4.8,
+        "link": "https://www.youtube.com/embed/DzfpyUB60YY",
+        "description": "A psychological horror about a Black man visiting his white girlfriend's family, uncovering sinister secrets. \nThe film blends social commentary, suspense, and supernatural elements. \nThe trailer teases chilling encounters, tension, and horrifying twists. \nGet Out is considered one of the smartest modern horror films."
+    },
+
+    {
+        "title": "Shutter Island",
+        "image": "https://img.youtube.com/vi/5iaYLCiq5RM/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2010,
+        "rating": 4.4,
+        "link": "https://www.youtube.com/embed/5iaYLCiq5RM",
+        "description": "A psychological horror about a U.S. Marshal investigating a psychiatric facility on an isolated island. \nThe trailer reveals suspenseful encounters, mysterious patients, and dark secrets. \nShutter Island blends mystery, thriller, and horror for a gripping experience. \nLeonardo DiCaprio delivers a stellar performance as the troubled investigator."
+    },
+
+    {
+        "title": "The Haunting of Hill House",
+        "image": "https://img.youtube.com/vi/3eqxXqJDmcY/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "series",
+        "year": 2018,
+        "rating": 4.7,
+        "link": "https://www.youtube.com/watch?v=3eqxXqJDmcY",
+        "description": "A modern reimagining of Shirley Jackson's classic novel, this series follows five adult siblings whose paranormal experiences at Hill House continue to haunt them in the present day, while they revisit events from their childhood."
+    },
+    {
+        "title": "Tumbbad",
+        "image": "https://img.youtube.com/vi/YGIcZrUBY0k/hqdefault.jpg",
+        "category": "horror",
+        "language": "hindi",
+        "type": "movie",
+        "year": 2018,
+        "rating": 4.6,
+        "link": "https://www.youtube.com/watch?v=YGIcZrUBY0k",
+        "description": "Set in 1918, this film follows a man’s search for a hidden treasure in the village of Tumbbad, Maharashtra, which leads him to confront a dangerous and ancient supernatural force."
+    },
+    {
+        "title": "The Exorcist",
+        "image": "https://img.youtube.com/vi/BU2eYAO31Cc/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 1973,
+        "rating": 4.9,
+        "link": "https://www.youtube.com/watch?v=BU2eYAO31Cc",
+        "description": "When a young girl is possessed by a mysterious entity, her mother seeks the help of two priests to save her daughter. A chilling tale of demonic possession that has become a horror classic."
+    },
+    {
+        "title": "Phone",
+        "image": "https://img.youtube.com/vi/GOY1gXV5Vao/hqdefault.jpg",
+        "category": "horror",
+        "language": "korean",
+        "type": "movie",
+        "year": 2002,
+        "rating": 4.3,
+        "link": "https://www.youtube.com/watch?v=GOY1gXV5Vao",
+        "description": "A journalist receives a mysterious phone call that leads her to investigate a series of disturbing events, uncovering a terrifying secret tied to her own past."
+    },
+    {
+        "title": "The Wailing",
+        "image": "https://img.youtube.com/vi/VUWAgbXSJ4Y/hqdefault.jpg",
+        "category": "horror",
+        "language": "korean",
+        "type": "movie",
+        "year": 2016,
+        "rating": 4.7,
+        "link": "https://www.youtube.com/watch?v=VUWAgbXSJ4Y",
+        "description": "A stranger arrives in a small village, and a mysterious sickness begins to spread. A local policeman investigates the events, uncovering dark secrets and supernatural forces."
+    },
+    {
+        "title": "The Mist",
+        "image": "https://img.youtube.com/vi/LhCKXJNGzN8/hqdefault.jpg",
+        "category": "horror",
+        "language": "english",
+        "type": "movie",
+        "year": 2007,
+        "rating": 4.2,
+        "link": "https://www.youtube.com/watch?v=LhCKXJNGzN8",
+        "description": "After a violent storm, a group of people are trapped in a supermarket by a mysterious mist filled with deadly creatures. As tensions rise, they must confront both external and internal horrors."
+    },
+    {
+        "title": "Kaantha",
+        "image": "https://img.youtube.com/vi/Um5ttDB1VYA/maxresdefault.jpg",
+        "category": "drama",
+        "language": "tamil",
+        "type": "movie",
+        "year": 2025,
+        "rating": 4.5,
+        "link": "https://www.youtube.com/embed/Um5ttDB1VYA",
+        "description": "Dulquer Salmaan stars in this emotional drama directed by Selvamani Selvaraj. The trailer showcases a heartfelt narrative exploring complex human emotions."
+    },
+    
+
+
+    {
+        "title": "The Fault in Our Stars",
+        "image": "https://img.youtube.com/vi/9ItBvH5J6ss/maxresdefault.jpg",
+        "category": "romantic_drama",
+        "language": "english",
+        "type": "movie",
+        "year": 2014,
+        "rating": 4.5,
+        "link": "https://www.youtube.com/embed/9ItBvH5J6ss",
+        "description": "Hazel and Gus, two teenagers with cancer, fall in love while facing their mortality. The trailer teases hope, love, and bittersweet tragedy."
+    },
+    {
+        "title": "1",
+        "image": "https:\/\/www.dropbox.com\/scl\/fi\/5t72a2ndoti1nwbv66llt\/hqdefault-4.jpg?rlkey=wc9vzl0cshuql8e9y2qmv2r4w&st=hdvppu2x&dl=1",
+        "category": "trailers",
+        "language": "telugu",
+        "type": "movie",
+        "link": "https:\/\/www.youtube.com\/embed\/ZdZUPzxlh0o"
+    },
+    {
+        "title": "2",
+        "image": "https:\/\/www.dropbox.com\/scl\/fi\/7wsa2gc71s1k57zsk1tor\/hqdefault-6.jpg?rlkey=omgu672m39p4s3dyuejyqfnv7&st=rslcm1h8&dl=1",
+        "category": "trailers",
+        "language": "telugu",
+        "type": "movie",
+        "link": "https:\/\/www.youtube.com\/embed\/_ICVna0VnsY"
+    },
+    {
+        "title": "3",
+        "image": "https:\/\/www.dropbox.com\/scl\/fi\/odoe1dtn2fcgumv1wb8lh\/hqdefault-9.jpg?rlkey=k4eorh685f2kb2e65h5bfpi4w&st=3upxfad6&dl=1",
+        "category": "trailers",
+        "language": "telugu",
+        "type": "movie",
+        "link": "https:\/\/www.youtube.com\/embed\/5Wcg4ciop2M"
+    },
+    {
+        "title": "4",
+        "image": "https:\/\/www.dropbox.com\/scl\/fi\/s6lwlkqsl7ztwy94s0700\/hqdefault-5.jpg?rlkey=c4wxixbf1d69nzexysgkds63i&st=fn66g2vw&dl=1",
+        "category": "trailers",
+        "language": "telugu",
+        "type": "movie",
+        "link": "https:\/\/www.youtube.com\/embed\/dPZQe9RmpQI"
+    }
+
+
+  
+]
