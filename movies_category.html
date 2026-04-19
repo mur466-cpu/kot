@@ -3,24 +3,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Categories</title>
+  <title>Select Category</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="dark-theme">
   <header class="header">
     <img src="assets/logo.png" alt="Logo" class="logo" />
-    <a href="index.html">← Back</a>
+    <button onclick="window.location.href='index.html'">Back</button>
   </header>
-  <main style="padding: 20px;">
-    <h1>Categories</h1>
-    <ul>
-      <li><a href="index.html#action">Action</a></li>
-      <li><a href="index.html#web_series">Web Series</a></li>
-      <li><a href="index.html#anime_Series">Anime</a></li>
-      <li><a href="index.html#romantic_drama">Romantic Drama</a></li>
-      <li><a href="index.html#action_adventure">Action Adventure</a></li>
-      <li><a href="index.html#trailers">Trailers</a></li>
-    </ul>
+
+  <main style="padding:40px;">
+    <h1>Select Category</h1>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px,1fr));gap:20px;margin-top:20px;">
+      <div class="category-card" tabindex="0" onclick="goTo('language_page.html?cat=action')" style="background:#e50914;">Action</div>
+      <div class="category-card" tabindex="0" onclick="goTo('language_page.html?cat=anime')" style="background:#9c27b0;">Anime</div>
+      <div class="category-card" tabindex="0" onclick="goTo('language_page.html?cat=drama')" style="background:#ff9800;">Drama</div>
+    </div>
   </main>
+
+  <script>
+    function goTo(url) { window.location.href = url; }
+
+    // TV Navigation
+    document.addEventListener('keydown', (e) => {
+      const cards = document.querySelectorAll('.category-card');
+      let index = Array.from(cards).findIndex(c => c === document.activeElement);
+
+      if (index === -1) index = 0;
+
+      switch(e.key) {
+        case 'ArrowRight':
+          if (cards[index + 1]) cards[index + 1].focus();
+          break;
+        case 'ArrowLeft':
+          if (cards[index - 1]) cards[index - 1].focus();
+          break;
+        case 'Enter':
+          cards[index].click();
+          break;
+      }
+    });
+
+    document.querySelector('.category-card').focus();
+  </script>
+
+  <style>
+    .category-card {
+      padding: 60px 20px;
+      background: #333;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: transform 0.2s, outline 0.2s;
+    }
+    .category-card:focus {
+      outline: 4px solid #e50914;
+      transform: scale(1.05);
+    }
+  </style>
 </body>
 </html>
