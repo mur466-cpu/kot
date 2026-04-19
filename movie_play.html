@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Play Movie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+    <a href="index.html">← Back</a>
+  </header>
+  <main style="padding: 20px; text-align: center;">
+    <h1>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.write(decodeURIComponent(urlParams.get('title') || 'Movie'));
+      </script>
+    </h1>
+    <p>🎥 Playing now... (Simulated video player)</p>
+    <video width="80%" controls style="max-width: 800px; margin-top: 20px;">
+      <source src="demo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </main>
+</body>
+</html>
