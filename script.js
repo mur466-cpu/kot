@@ -15,7 +15,7 @@ function renderMovieCard(movie, container) {
   const card = document.createElement("div");
   card.className = "movie-card";
   
-      card.setAttribute('tabindex', '0');
+
       
   card.innerHTML = `
     <img src="${movie.image}" alt="${movie.title}">
@@ -251,26 +251,7 @@ document.addEventListener('keydown', (e) => {
       }
       break;
 
-    case 'ArrowDown':
-      e.preventDefault();
-      // Move to next row (simplified: jump 5 items)
-      const down = cards[currentIndex + 5];
-      if (down) {
-        down.focus();
-        focusedElement = down;
-        ensureVisible(down);
-      }
-      break;
 
-    case 'ArrowUp':
-      e.preventDefault();
-      const up = cards[currentIndex - 5];
-      if (up) {
-        up.focus();
-        focusedElement = up;
-        ensureVisible(up);
-      }
-      break;
 
     case 'Enter':
       e.preventDefault();
