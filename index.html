@@ -3,34 +3,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OTT App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="index-page">
+<body class="dark-theme">
   <!-- Header -->
   <header class="header">
     <img src="assets/logo.png" alt="Logo" class="logo" />
     <div class="search-bar">
-      <input type="text" placeholder="Search..." />
+      <input type="text" placeholder="Search..." id="searchInput" />
     </div>
-    <nav class="menu">
-      <a href="movies_category.html">Categories</a>
-      <a href="language_page.html">Languages</a>
-    </nav>
+    <button id="menuBtn" class="menu-btn">☰ Menu</button>
   </header>
 
-  <!-- Hero Slider (Trailers Only) -->
-  <section class="hero-slider" id="hero-slider">
-    <div class="slide active">
-      <img src="" alt="Trailer" class="slide-image" />
-      <div class="play-button">▶</div>
-      <h2 class="slide-title"></h2>
-    </div>
+  <!-- Hero Slider (Only Trailers) -->
+  <section class="hero-slider" id="heroSlider">
+    <!-- Filled by JS -->
   </section>
 
   <!-- Dynamic Sections -->
-  <main id="dynamic-sections"></main>
+  <main id="dynamic-sections" class="sections-container">
+    <!-- Dynamically generated -->
+  </main>
 
   <script src="script.js"></script>
 </body>
