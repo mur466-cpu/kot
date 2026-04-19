@@ -15,7 +15,7 @@ function renderMovieCard(movie, container) {
   const card = document.createElement("div");
   card.className = "movie-card";
   
-
+card.tabIndex = 0;
       
   card.innerHTML = `
     <img src="${movie.image}" alt="${movie.title}">
