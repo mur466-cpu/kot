@@ -1,92 +1,229 @@
 
-// Static sections
-const staticSections = [
-  "trailers",
-  "web_series",
-  "romantic_drama",
-  "anime_series",
-  "action",
-  "action_adventure"
-];
-
-const dynamicContainer = document.getElementById("dynamic-sections");
 let movies = [];
 let focusedElement = null;
-let searchTimeout;
 
-// Fetch movies
-async function loadMovies() {
-  try {
-    const res = await fetch('movies.json');
-    movies = await res.json();
-    renderHeroSlider();
-    renderDynamicSections();
-  } catch (err) {
-    console.error("Failed to load movies:", err);
-  }
+// Format category name (e.g., "romantic_drama" → "Romantic Drama")
+function formatText(text) {
+  return text
+    .split('_')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
 }
 
-// Render Hero Slider (Only Trailers)
-function renderHeroSlider() {
-  const heroSlider = document.getElementById('heroSlider');
-  const trailerMovies = movies.filter(m => m.category === "trailers");
+// Render movie card
+function renderMovieCard(movie, container) {
+  const card = document.createElement("div");
+  card.className = "movie-card";
+  
+      card.setAttribute('tabindex', '0');
+      
+  card.innerHTML = `
+    <img src="${movie.image}" alt="${movie.title}">
+    <div class="card-info">
+      <h3>${movie.title}</h3>
 
-  if (trailerMovies.length === 0) {
-    heroSlider.innerHTML = `<div class="hero-slide" style="background:#222"><h2>No Trailers Available</h2></div>`;
-    return;
-  }
-
-  const current = trailerMovies[0];
-  heroSlider.innerHTML = `
-    <div class="hero-slide" style="background-image: url('${current.image}')">
-      <div>
-        <h2>${current.title}</h2>
-        <p>Watch the latest trailer now!</p>
-      </div>
     </div>
   `;
+  
+  card.addEventListener("click", () => {
+            window.location.href = `movie_play.html?title=${encodeURIComponent(movie.title)}`;
+  });
+  
+  
+  container.appendChild(card);
+  
+
+  
 }
 
-// Render Dynamic Sections
-function renderDynamicSections() {
-  dynamicContainer.innerHTML = '';
+// Render hero slider
+function renderHeroSlider() {
+  const heroSlider = document.getElementById("hero-slider");
+  
+          const featured = movies.filter(movie => movie.category.toLowerCase() === "trailers");
+          
+          featured.forEach((movie, index) => {
+  
+
+    const slide = document.createElement('div');
+
+    slide.className = `hero-slide${index === 0 ? " active" : ""}`;
+    slide.style.backgroundImage = `url(${movie.image})`;
+    slide.innerHTML = `
+      <div class="slide-content">
+
+
+
+
+
+      </div>
+    `;
+    heroSlider.appendChild(slide);
+  });
+}
+  // Auto-slide
+  setInterval(() => {
+    const slides = document.querySelectorAll(".hero-slide");
+    const current = document.querySelector(".hero-slide.active");
+    const next = current.nextElementSibling || slides[0];
+    current.classList.remove("active");
+    next.classList.add("active");
+    
+
+    
+  }, 5000);
+
+
+// Render main page
+function renderMainPage() {
+  const staticSections = [
+   "trailers", "k-apps", "k-channels", "K-news", "live movies", "new movies", "old movies" , "devotinal", "k-activities", "web series", "live web series",  "serials"
+  ];
+  const dynamicContainer = document.getElementById("dynamic-sections");
+
+  // --- Static Sections ---
+  
   staticSections.forEach(section => {
-    const sectionMovies = movies.filter(m => m.category.toLowerCase() === section.toLowerCase());
-    if (sectionMovies.length === 0) return;
+    let filteredMovies = [];
 
-    const sectionEl = document.createElement('div');
-    sectionEl.className = 'section';
-    sectionEl.innerHTML = `<h2>${formatTitle(section)}</h2>`;
-    
-    const row = document.createElement('div');
-    row.className = 'movies-row';
-    
-    sectionMovies.forEach(movie => {
-      const card = document.createElement('div');
-      card.className = 'movie-card';
-      card.style.backgroundImage = `url('${movie.image}')`;
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('data-link', movie.link);
-      card.innerHTML = `<div class="title">${movie.title}</div>`;
-      row.appendChild(card);
-    });
+      filteredMovies = movies.filter(m => m.category === section);
 
-    sectionEl.appendChild(row);
-    dynamicContainer.appendChild(sectionEl);
+    if (filteredMovies.length === 0) return;
+  
+    let container = document.getElementById(section);
+    if (!container && dynamicContainer) {
+      const sectionDiv = document.createElement("div");
+      sectionDiv.className = "movie-section";
+      sectionDiv.id = section;
+      sectionDiv.innerHTML = `
+        <div class="section-header">
+          <h2 class="section-title">${formatText(section)}</h2>
+          <a href="movies_category.html?category=${section}" class="see-all">See All</a>
+        </div>
+        <div class="movie-row" id="dynamic-${section}"></div>
+      `;
+      dynamicContainer.appendChild(sectionDiv);
+      container = sectionDiv.querySelector(".movie-row");
+    }
+
+    filteredMovies.forEach(m => renderMovieCard(m, container));
   });
 
+  // --- Dynamic Categories (extra) ---
+  const allCategories = [...new Set(movies.map(m => m.category))];
+  const extraCategories = allCategories.filter(c => !staticSections.includes(c));
+
+  extraCategories.forEach(category => {
+    const filteredMovies = movies.filter(m => m.category === category);
+    if (filteredMovies.length === 0 || !dynamicContainer) return;
+
+    const section = document.createElement("div");
+    section.className = "movie-section";
+    section.innerHTML = `
+      <div class="section-header">
+        <h2 class="section-title">${formatText(category)}</h2>
+        <a href="movies_category.html?category=${category}" class="see-all">See All</a>
+      </div>
+      <div class="movie-row-dynamic" id="dynamic-${category}"></div>
+    `;
+    dynamicContainer.appendChild(section);
+
+    const row = section.querySelector(".movie-row-dynamic");
+    filteredMovies.forEach(m => renderMovieCard(m, row));
+  
   // Focus first card
   const firstCard = document.querySelector('.movie-card');
   if (firstCard) {
     firstCard.focus();
     focusedElement = firstCard;
   }
+
+
+setTimeout(() => {
+    const first = row.querySelector('.movie-card');
+    if (first) first.focus();
+  }, 500);
+      
+  });
+
+  // --- Language Section ---
+  const langContainer = document.getElementById("language-row");
+  if (langContainer) {
+    const languages = [...new Set(movies.map(m => m.language))];
+    const previewLanguages = languages.slice(0, 10);
+
+    previewLanguages.forEach(lang => {
+      const card = document.createElement("div");
+      card.className = "lang-card";
+      card.textContent = formatText(lang);
+      card.addEventListener("click", () => {
+        window.location.href = `language_page.html?language=${lang}`;
+      });
+      langContainer.appendChild(card);
+    });
+
+    const header = langContainer.parentElement.querySelector(".section-header");
+    if (header && !header.querySelector(".see-all")) {
+      const seeAllLink = document.createElement("a");
+      seeAllLink.href = "movies_category.html?category=languages";
+      seeAllLink.className = "see-all";
+      seeAllLink.textContent = "See All";
+      header.appendChild(seeAllLink);
+    }
+  }
 }
 
-// Format category name
-function formatTitle(str) {
-  return str.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+// Search Functionality
+function setupSearch() {
+  const searchInput = document.getElementById("search-input");
+  if (!searchInput) return;
+
+  searchInput.addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase();
+    if (query.length < 2) return;
+
+    const results = movies.filter(m => 
+      m.title.toLowerCase().includes(query) ||
+      m.category.toLowerCase().includes(query) ||
+      m.language.toLowerCase().includes(query)
+    );
+
+    const container = document.getElementById("dynamic-sections");
+    container.innerHTML = "";
+
+    if (results.length > 0) {
+      const section = document.createElement("div");
+      section.className = "movie-section";
+      section.innerHTML = `
+        <div class="section-header">
+          <h2 class="section-title">Search Results</h2>
+        </div>
+        <div class="movie-row"></div>
+      `;
+      container.appendChild(section);
+      const row = section.querySelector(".movie-row");
+      results.forEach(m => renderMovieCard(m, row));
+    } else {
+      container.innerHTML = "<p style='color:#aaa; padding:20px;'>No movies found.</p>";
+    }
+  });
+  
+
+  
 }
+
+// Load movies and initialize
+window.onload = async () => {
+  try {
+    const res = await fetch('movies.json');
+    movies = await res.json();
+    renderHeroSlider();
+    renderMainPage();
+    setupSearch();
+  } catch (err) {
+    console.error("Failed to load movies:", err);
+  }
+};
 
 // Navigation with TV Remote (Arrow Keys + Enter)
 document.addEventListener('keydown', (e) => {
@@ -149,70 +286,3 @@ document.addEventListener('keydown', (e) => {
       break;
   }
 });
-
-// Ensure focused element is in view
-function ensureVisible(element) {
-  const row = element.parentElement;
-  const containerWidth = row.offsetWidth;
-  const cardWidth = element.offsetWidth + 15;
-  const scrollLeft = row.scrollLeft;
-  const cardOffset = element.offsetLeft;
-
-  if (cardOffset < scrollLeft) {
-    row.scrollTo({ left: cardOffset, behavior: 'smooth' });
-  } else if (cardOffset + cardWidth > scrollLeft + containerWidth) {
-    row.scrollTo({ left: cardOffset - containerWidth + cardWidth, behavior: 'smooth' });
-  }
-}
-
-// Search Functionality
-document.getElementById('searchInput').addEventListener('input', (e) => {
-  clearTimeout(searchTimeout);
-  searchTimeout = setTimeout(() => {
-    const query = e.target.value.toLowerCase();
-    if (query.length === 0) {
-      renderDynamicSections();
-      return;
-    }
-
-    const filtered = movies.filter(m =>
-      m.title.toLowerCase().includes(query)
-    );
-
-    dynamicContainer.innerHTML = '';
-
-    if (filtered.length === 0) {
-      dynamicContainer.innerHTML = '<p>No results found.</p>';
-      return;
-    }
-
-    const section = document.createElement('div');
-    section.className = 'section';
-    section.innerHTML = `<h2>Search Results</h2>`;
-    const row = document.createElement('div');
-    row.className = 'movies-row';
-
-    filtered.forEach(movie => {
-      const card = document.createElement('div');
-      card.className = 'movie-card';
-      card.style.backgroundImage = `url('${movie.image}')`;
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('data-link', movie.link);
-      card.innerHTML = `<div class="title">${movie.title}</div>`;
-      row.appendChild(card);
-    });
-
-    section.appendChild(row);
-    dynamicContainer.appendChild(section);
-
-
-
-
-
-    const first = row.querySelector('.movie-card');
-    if (first) first.focus();
-  }, 500);
-});
-
-// Initialize
-window.onload = loadMovies;
