@@ -4,29 +4,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OTT App</title>
+  <title>Kancherla</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="dark-theme">
-  <!-- Header -->
-  <header class="header">
-    <img src="assets/logo.png" alt="Logo" class="logo" />
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." id="searchInput" />
+<body>
+
+
+  <header>
+    <div class="container">
+        
+    <!-- Navigation Bar -->
+    
+    <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        
+        
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search..." />
+      </div>
+        
     </div>
-    <button id="menuBtn" class="menu-btn">☰ Menu</button>
   </header>
+  
+  
 
-  <!-- Hero Slider (Only Trailers) -->
-  <section class="hero-slider" id="heroSlider">
-    <!-- Filled by JS -->
-  </section>
 
-  <!-- Dynamic Sections -->
-  <main id="dynamic-sections" class="sections-container">
-    <!-- Dynamically generated -->
-  </main>
+  <div class="hero-slider" id="hero-slider">
+    <!-- Slides will be added dynamically -->
+  </div>
+  
+  <!-- Language Section -->
+  <div class="lang-container">
+    <div class="section-header">
+      <h2 class="section-title">Languages</h2>
+    </div>
+    <div class="lang-row" id="language-row"></div>
+  </div>
+  
+  
+
+
+    </div>
+
+    <!-- Dynamic Sections -->
+    <div id="dynamic-sections"></div>
+  </div>
+  
+
+  
 
   <script src="script.js"></script>
+  
+
 </body>
 </html>
