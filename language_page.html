@@ -3,56 +3,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Select Language</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="dark-theme">
-  <header class="header">
-    <img src="assets/logo.png" alt="Logo" class="logo" />
-    <button onclick="window.location.href='movies_category.html'">Back</button>
-  </header>
-
-  <main style="padding:40px;">
-    <h1>Select Language</h1>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px,1fr));gap:20px;margin-top:20px;">
-      <div class="lang-card" tabindex="0" onclick="goTo('index.html')">English</div>
-      <div class="lang-card" tabindex="0" onclick="goTo('index.html')">Hindi</div>
-      <div class="lang-card" tabindex="0" onclick="goTo('index.html')">Japanese</div>
-    </div>
-  </main>
-
-  <script>
-    function goTo(url) { window.location.href = url; }
-
-    document.addEventListener('keydown', (e) => {
-      const cards = document.querySelectorAll('.lang-card');
-      let index = Array.from(cards).findIndex(c => c === document.activeElement);
-      if (index === -1) index = 0;
-
-      switch(e.key) {
-        case 'ArrowRight': if (cards[index + 1]) cards[index + 1].focus(); break;
-        case 'ArrowLeft': if (cards[index - 1]) cards[index - 1].focus(); break;
-        case 'Enter': cards[index].click(); break;
-      }
-    });
-
-    document.querySelector('.lang-card').focus();
-  </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Language - Kancherla</title>
   <style>
-    .lang-card {
-      padding: 50px 20px;
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1.1rem;
+    body { background: #111; color: white; font-family: sans-serif; padding: 20px; }
+    h1 { text-align: center; }
+    .movie-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
-    .lang-card:focus {
-      outline: 4px solid #e50914;
-      transform: scale(1.05);
+    .movie-card {
+      width: 160px;
+      background: #222;
+      color: yellow;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .movie-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+    .movie-info {
+      padding: 0px;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      color: #00aaff;
+      text-decoration: none;
     }
   </style>
+</head>
+<body>
+  <h1 id="language-title">Movies</h1>
+  <div class="movie-row" id="language-movies"></div>
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const language = urlParams.get("language");
+
+    const titleEl = document.getElementById("language-title");
+    const container = document.getElementById("language-movies");
+
+    titleEl.textContent = `${language.charAt(0).toUpperCase() + language.slice(1)} Movies`;
+
+    fetch('movies.json')
+      .then(res => res.json())
+      .then(movies => {
+        const filtered = movies.filter(m => m.language === language);
+        filtered.forEach(m => {
+          const card = document.createElement("div");
+          card.className = "movie-card";
+          card.innerHTML = `
+            <img src="${m.image}" alt="${m.title}">
+            <div class="movie-info">
+              <h3>${m.title}</h3>
+              <p>${m.year} • ⭐ ${m.rating}</p>
+            </div>
+          `;
+          card.onclick = () => window.location.href = `movie_play.html?title=${encodeURIComponent(m.title)}`;
+          container.appendChild(card);
+        });
+      });
+  </script>
 </body>
 </html>
