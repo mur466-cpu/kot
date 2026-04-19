@@ -3,26 +3,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Play Movie</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Now Playing</title>
+  <style>
+    body { background: #000; color: white; text-align: center; padding: 50px; }
+    .video-placeholder {
+      width: 80%;
+      height: 500px;
+      background: #222;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #e50914;
+    }
+    button { padding: 15px 30px; font-size: 1.2rem; margin-top: 20px; }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <img src="assets/logo.png" alt="Logo" class="logo" />
-    <a href="index.html">← Back</a>
-  </header>
-  <main style="padding: 20px; text-align: center;">
-    <h1>
-      <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        document.write(decodeURIComponent(urlParams.get('title') || 'Movie'));
-      </script>
-    </h1>
-    <p>🎥 Playing now... (Simulated video player)</p>
-    <video width="80%" controls style="max-width: 800px; margin-top: 20px;">
-      <source src="demo.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </main>
+  <img src="assets/logo.png" alt="Logo" style="height:60px;" />
+  <div class="video-placeholder">
+    <h2>🎥 Playing Movie...</h2>
+  </div>
+  <button onclick="window.history.back()">Back</button>
+
+  <script>
+    // Simulate TV remote back
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' || e.key === 'Escape') {
+        window.history.back();
+      }
+    });
+  </script>
 </body>
 </html>
