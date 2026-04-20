@@ -4,58 +4,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kancherla</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>K-OTT</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-
-
+<body class="main-page">
   <header>
-    <div class="container">
-        
-    <!-- Navigation Bar -->
-    
-    <div class="logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-        
-        
-      <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Search..." />
-      </div>
-        
+    <div class="logo">🎬 <span>K-OTT</span></div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search movies..." />
     </div>
+    <nav class="menu">
+      <a href="#" class="active">Home</a>
+      <a href="movies_category.html?category=live%20movies">Live</a>
+      <a href="language_page.html">Languages</a>
+    </nav>
   </header>
-  
-  
 
+  <main>
+    <!-- Hero Slider (Only for Trailers) -->
+    <section class="hero-slider" id="hero-slider">
+      <div class="slide">
+        <img id="hero-img" src="" alt="Trailer" />
+        <div class="hero-overlay">
+          <h1 id="hero-title"></h1>
+          <button id="play-button">▶ Play</button>
+        </div>
+      </div>
+    </section>
 
-  <div class="hero-slider" id="hero-slider">
-    <!-- Slides will be added dynamically -->
-  </div>
-  
-  <!-- Language Section -->
-  <div class="lang-container">
-    <div class="section-header">
-      <h2 class="section-title">Languages</h2>
-    </div>
-    <div class="lang-row" id="language-row"></div>
-  </div>
-  
-  
-
-
-    </div>
+    <!-- Language Preview -->
+    <section class="movie-section">
+      <div class="section-header">
+        <h2 class="section-title">Languages</h2>
+        <a href="movies_category.html?category=languages" class="see-all">See All</a>
+      </div>
+      <div class="movie-row" id="language-row"></div>
+    </section>
 
     <!-- Dynamic Sections -->
     <div id="dynamic-sections"></div>
-  </div>
-  
-
-  
+  </main>
 
   <script src="script.js"></script>
-  
-
 </body>
 </html>
