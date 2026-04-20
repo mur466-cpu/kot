@@ -3,26 +3,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Play Movie</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header class="header">
+<body class="play-body" tabindex="0">
+  <header class="app-header">
     <img src="assets/logo.png" alt="Logo" class="logo" />
-    <a href="index.html">← Back</a>
+    <a href="index.html" class="back-btn">← Back</a>
   </header>
-  <main style="padding: 20px; text-align: center;">
-    <h1>
-      <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        document.write(decodeURIComponent(urlParams.get('title') || 'Movie'));
-      </script>
-    </h1>
-    <p>🎥 Playing now... (Simulated video player)</p>
-    <video width="80%" controls style="max-width: 800px; margin-top: 20px;">
-      <source src="demo.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </main>
+
+  <div class="player-container">
+    <h2 id="play-title">Loading...</h2>
+    <p>Simulated Video Player - Press Enter to Play (TV Remote)</p>
+    <button class="play-action-btn" onclick="alert('Playing...')">▶ Play Now</button>
+  </div>
+
+  <script>
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = decodeURIComponent(urlParams.get("title") || "Unknown");
+      document.getElementById("play-title").textContent = title;
+    };
+  </script>
 </body>
 </html>
