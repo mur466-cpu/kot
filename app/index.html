@@ -3,34 +3,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTT App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>K-OTT</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="index-page">
-  <!-- Header -->
-  <header class="header">
+<body tabindex="0">
+  <header class="app-header">
     <img src="assets/logo.png" alt="Logo" class="logo" />
     <div class="search-bar">
-      <input type="text" placeholder="Search..." />
+      <input type="text" placeholder="Search..." id="searchInput" />
     </div>
     <nav class="menu">
-      <a href="movies_category.html">Categories</a>
-      <a href="language_page.html">Languages</a>
+      <a href="#" class="nav-link active">Home</a>
+      <a href="#" class="nav-link">Categories</a>
+      <a href="#" class="nav-link">Profile</a>
     </nav>
   </header>
 
-  <!-- Hero Slider (Trailers Only) -->
+  <!-- Hero Slider (Trailers only) -->
   <section class="hero-slider" id="hero-slider">
-    <div class="slide active">
-      <img src="" alt="Trailer" class="slide-image" />
-      <div class="play-button">▶</div>
-      <h2 class="slide-title"></h2>
+    <div class="slide" id="slide-0">
+      <img src="" alt="Trailer" class="slide-img" />
+      <div class="slide-overlay">
+        <h2 class="slide-title"></h2>
+        <button class="play-btn" onclick="playTrailer()">▶ Play</button>
+      </div>
     </div>
+    <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
   </section>
 
-  <!-- Dynamic Sections -->
-  <main id="dynamic-sections"></main>
+  <!-- Language Preview -->
+  <section class="movie-section">
+    <div class="section-header">
+      <h2 class="section-title">Languages</h2>
+      <a href="movies_category.html?category=languages" class="see-all">See All</a>
+    </div>
+    <div class="movie-row" id="language-row"></div>
+  </section>
+
+  <!-- Dynamic Movie Sections -->
+  <div id="dynamic-sections"></div>
 
   <script src="script.js"></script>
 </body>
