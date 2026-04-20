@@ -4,73 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Language - Kancherla</title>
-  <style>
-    body { background: #111; color: white; font-family: sans-serif; padding: 20px; }
-    h1 { text-align: center; }
-    .movie-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-    .movie-card {
-      width: 160px;
-      background: #222;
-      color: yellow;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .movie-card img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-    }
-    .movie-info {
-      padding: 0px;
-    }
-
-    .back-btn {
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-      color: #00aaff;
-      text-decoration: none;
-    }
-  </style>
+  <title>Languages - K-OTT</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-  <h1 id="language-title">Movies</h1>
-  <div class="movie-row" id="language-movies"></div>
-  <a href="index.html" class="back-btn">← Back to Home</a>
+<body class="language-page">
+  <header>
+    <div class="logo">🎬 <span>K-OTT</span></div>
+    <a href="index.html" class="back-btn">← Back</a>
+  </header>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const language = urlParams.get("language");
+  <main>
+    <h1 class="page-title">Languages</h1>
+    <div class="movie-row" id="language-movies"></div>
+  </main>
 
-    const titleEl = document.getElementById("language-title");
-    const container = document.getElementById("language-movies");
-
-    titleEl.textContent = `${language.charAt(0).toUpperCase() + language.slice(1)} Movies`;
-
-    fetch('movies.json')
-      .then(res => res.json())
-      .then(movies => {
-        const filtered = movies.filter(m => m.language === language);
-        filtered.forEach(m => {
-          const card = document.createElement("div");
-          card.className = "movie-card";
-          card.innerHTML = `
-            <img src="${m.image}" alt="${m.title}">
-            <div class="movie-info">
-              <h3>${m.title}</h3>
-              <p>${m.year} • ⭐ ${m.rating}</p>
-            </div>
-          `;
-          card.onclick = () => window.location.href = `movie_play.html?title=${encodeURIComponent(m.title)}`;
-          container.appendChild(card);
-        });
-      });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
