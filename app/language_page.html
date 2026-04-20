@@ -3,23 +3,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Languages</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header class="header">
+<body tabindex="0">
+  <header class="app-header">
     <img src="assets/logo.png" alt="Logo" class="logo" />
-    <a href="index.html">← Back</a>
+    <a href="index.html" class="back-btn">← Back</a>
   </header>
-  <main style="padding: 20px;">
-    <h1>Languages</h1>
-    <ul>
-      <li><a href="#">English</a></li>
-      <li><a href="#">Hindi</a></li>
-      <li><a href="#">Japanese</a></li>
-      <li><a href="#">Spanish</a></li>
-      <li><a href="#">French</a></li>
-    </ul>
-  </main>
+
+  <h2 class="page-title">All Languages</h2>
+  <div class="movie-row" id="language-movies"></div>
+
+  <script src="script.js"></script>
+  <script>
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const lang = urlParams.get("language") || "";
+
+      fetch("movies.json")
+        .then(res => res.json())
+        .then(data => {
+          const filtered = lang ? data.filter(m => m.language === lang) : data;
+          const languages = [...new Set(data.map(m => m.language))];
+          const container = document.getElementById("language-movies");
+
+          if (!lang) {
+            languages.forEach(l => {
+              const card = document.createElement("div");
+              card.className = "lang-card big";
+              card.textContent = formatText(l);
+              card.onclick = () => {
+                window.location.href = `language_page.html?language=${l}`;
+              };
+              container.appendChild(card);
+            });
+          } else {
+            document.querySelector(".page-title").textContent = formatText(lang);
+            filtered.forEach(movie => renderMovieCard(movie, container));
+          }
+        });
+    };
+  </script>
 </body>
 </html>
