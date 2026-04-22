@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Language</title>
+
+  
+ <style>
+    body { background: #111; color: white; font-family: sans-serif; padding: 20px; }
+    
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
+}
+
+
+    h1 { text-align: center; }
+    
+.movie-row,
+.movie-row-dynamic {
+        display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+}
+
+
+    
+.movie-card {
+  min-width: 160px;
+  background: #222;
+color: yellow;
+  border-radius: 8px;
+  overflow: hidden;
+
+}
+
+.movie-card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+
+.movie-card .info {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+
+
+.back-btn {
+  color: yellow;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+        .logo {
+            height: 50px;
+            width:50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+    
+  </style>
+  
+</head>
+<body class="language-page">
+  <header>
+    <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+    <a href="index.html" class="back-btn">← Back</a>
+  </header>
+  <main>
+    <h2 class="page-title" id="language-title">Language</h2>
+    
+
+    <div class="movie-row" id="language-movies"></div>
+  </main>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
