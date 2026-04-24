@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Axios JSON Example</title>
+</head>
+<body>
+  <h1>Fetched JSON Data</h1>
+  <div id="data-container"></div>
+
+  <!-- Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- Your JavaScript code here -->
+  <script>
+    // Axios request to fetch JSON data
+    axios.get('https://mytv.ucncloud.in/slider.json')  // Replace with your API URL
+      .then(response => {
+        // Handle successful response
+        const data = response.data;
+        const container = document.getElementById('data-container');
+
+        if (Array.isArray(data)) {
+          data.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.textContent = JSON.stringify(item);
+            container.appendChild(itemDiv);
+          });
+        } else {
+          container.textContent = JSON.stringify(data);
+        }
+      })
+      .catch(error => {
+        // Handle errors
+        console.error('Error fetching data:', error);
+        document.getElementById('data-container').textContent = 'Failed to load data.';
+      });
+  </script>
+</body>
+</html>
