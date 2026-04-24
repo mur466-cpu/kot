@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>K-Stream</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="body-main" tabindex="0">
+  <header class="app-header">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search..." />
+    </div>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="movies_category.html?category=trailers">Trailers</a>
+      <a href="language_page.html">Languages</a>
+    </nav>
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero" id="hero-slide">
+    <div class="hero-overlay"></div>
+    <button id="hero-play-btn" class="hero-play">▶ Play</button>
+  </section>
+
+  <!-- Languages Preview -->
+  <section class="lang-section">
+    <h2>Languages</h2>
+    <div class="movie-row" id="language-row"></div>
+  </section>
+
+  <!-- Dynamic Sections -->
+  <main id="dynamic-sections"></main>
+
+  <script src="main.js"></script>
+</body>
+</html>
