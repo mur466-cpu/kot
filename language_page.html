@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Languages</title>
+  <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 2px solid transparent;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+/* Focus Handling for TV Remote */
+body:focus, .focus { outline: none !important; }
+
+body[tabindex] { outline: none; }
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+    h2 { text-align: center; }
+    
+
+.movie-card {
+  min-width: 160px; 
+height: 110px;
+  border-radius: 8px; cursor: pointer;
+  background-size: cover; background-position: center; position: relative;
+  transition: transform 0.2s;
+}
+    
+.movie-row {
+        display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+overflow-x: auto;
+}
+
+.movie-card::after {
+  content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #0009, #0000), rgba(0,0,0,0.3);
+  border-radius: 8px; opacity: 0.8;
+}
+.movie-card:focus, .lang-card:focus {
+  outline: 3px solid #ffcc00; transform: scale(1.05);
+}
+.movie-card span {
+  position: absolute; bottom: 10px; left: 10px; color: white; font-size: 14px;
+}
+
+
+
+.back-btn {
+  color: yellow;
+  text-decoration: none;
+  font-size: 1.2rem;
+font-weight: bold;
+}
+        .logo {
+            height: 60px;
+            width:60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+    
+  </style>
+  
+
+</head>
+<body class="body-lang" tabindex="0">
+  <header class="app-header">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <h2>Languages</h2>
+    <a href="index.html" class="back-btn">Back</a>
+  </header>
+
+  <main class="lang-main">
+    <div class="movie-row" id="language-movies"></div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
