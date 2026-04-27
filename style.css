@@ -120,7 +120,7 @@ height:30px;
   gap: 1rem;
   overflow-x: auto;
   padding: 1rem 0.5rem;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
         #video-player {
