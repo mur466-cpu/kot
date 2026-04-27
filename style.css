@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,7 +25,6 @@ body[tabindex] { outline: none; }
   top: 0;
   z-index: 100;
 }
-
 .logo { height: 60px; }
 
 .menu a {
@@ -34,7 +34,6 @@ body[tabindex] { outline: none; }
   color: #ffcc00; outline: 2px solid #ffcc00;
 }
 
-/* Hero Slider */
 .hero-slider {
   width: 100%;
   height: 50vh;
@@ -68,68 +67,30 @@ body[tabindex] { outline: none; }
   cursor: pointer;
 }
 
-#play-button:hover {
-  background: #e03500;
-}
+#play-button:hover, #play-button:focus { color: #ffcc00; outline: 1px dotted; }
 
-/* Sections */
-.movie-section {
-  margin: 30px 20px;
-}
 
+.movie-section { margin: 30px 20px; }
 .section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
 }
-
-.section-title {
-  font-size: 24px;
-  color: #00ff00;
-}
-
-.see-all {
-  color: #00ff00;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.see-all:hover, .see-all:focus { color: #FFEA00; outline: 1px dotted; }
-
-
-
-
-
+.section-title { color: #00ff00; font-size: 20px; }
+.see-all { color: #00ff00; text-decoration: none; }
+.see-all:hover, .see-all:focus { color: #ffcc00; outline: 1px dotted; }
 
 .movie-row {
-  display: flex;
-  gap: 10px;
-  padding: 10px 0;
-  overflow-x: auto;
+  display: flex; gap: 10px; overflow-x: auto; padding: 10px 0;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
-
-.movie-row::-webkit-scrollbar {
-  display: none;
-}
-
-/* Movie Card */
 .movie-card {
-  min-width: 180px;
-  background: #222;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s, outline 0.2s;
-  outline: 2px solid transparent;
+  min-width: 160px; 
+  border-radius: 8px; cursor: pointer;
+  background-size: cover; background-position: center; position: relative;
+  transition: transform 0.2s;
 }
 
-.movie-card:focus, .movie-card:hover {
-  transform: scale(1.05);
-  outline: 2px solid #0af;
+.movie-card:focus, .lang-card:focus {
+  outline: 3px solid #ffcc00; transform: scale(1.05);
 }
 
 .movie-card img {
@@ -144,14 +105,13 @@ body[tabindex] { outline: none; }
   text-align: center;
 }
 
-/* Language Section */
-    h2 { color: #FFEA00;}
+h3 { color: #FFEA00;}
 
 .lang-section { margin: 30px 10px; }
 .lang-card {
   min-width: 90px;  display: flex; align-items: center;
   justify-content: center; font-size: 16px; font-weight: bold;
-background: #0000FF; 
+background: blue; 
 border-radius: 8px;
 height:30px;
 }
@@ -170,17 +130,19 @@ height:30px;
 position:absolute;
             
         }
+        
+        .overlay-logo4 {
+            position: absolute;
+            bottom: 270px;
+            left: 50px;
+            z-index: 12;
+            width: 100px;
+            height: 70px; 
+        }
 
-
-/* Focus Handling for TV Remote */
 body:focus, .focus { outline: none !important; }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero-slider { height: 40vh; }
-  .movie-card { min-width: 160px; }
-    
+
 }
-
-
-
