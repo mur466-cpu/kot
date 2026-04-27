@@ -18,11 +18,11 @@ body {
   background: #0f0f0f;
   color: #fff;
 }
-/* Focus Handling for TV Remote */
+
 body:focus, .focus { outline: none !important; }
 
 body[tabindex] { outline: none; }
-/* Header */
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,12 @@ body[tabindex] { outline: none; }
     h2 { text-align: center; }
     
 
-
+.movie-card {
+  min-width: 160px; 
+  border-radius: 8px; cursor: pointer;
+  background-size: cover; background-position: center; position: relative;
+  transition: transform 0.2s;
+}
     
 .movie-row {
         display: flex;
@@ -48,20 +53,8 @@ overflow-x: auto;
 }
 
 
-/* Movie Card */
-.movie-card {
-  min-width: 160px;
-  background: #222;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s, outline 0.2s;
-  outline: 2px solid transparent;
-}
-
-.movie-card:focus, .movie-card:hover {
-  transform: scale(1.05);
-  outline: 2px solid #0af;
+.movie-card:focus, .lang-card:focus {
+  outline: 3px solid #ffcc00; transform: scale(1.05);
 }
 
 .movie-card img {
@@ -77,14 +70,15 @@ overflow-x: auto;
 }
 
 
-
-
 .back-btn {
   color: yellow;
   text-decoration: none;
   font-size: 1.2rem;
 font-weight: bold;
 }
+.back-btn:hover, .back-btn:focus { color: #ffcc00; outline: 1px dotted; }
+
+
         .logo {
             height: 60px;
             width:60px;
@@ -99,7 +93,6 @@ font-weight: bold;
     
   </style>
   
-
 </head>
 <body class="body-lang" tabindex="0">
   <header class="app-header">
